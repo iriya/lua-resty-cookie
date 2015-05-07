@@ -14,7 +14,7 @@ Table of Contents
     * [get](#get)
     * [get_all](#get_all)
     * [set](#set)
-    * [add]
+    * [add](#add)
 * [Installation](#installation)
 * [Authors](#authors)
 * [Copyright and License](#copyright-and-license)
@@ -139,6 +139,8 @@ syntax: ok, err = cookie_obj:add(cookie_key = "login", cookie_value="ok")
 ```
 
 Add a cookie to server. This will add a new cookie to the request header.
+
+[Back to TOC](#table-of-contents)
 
 Installation
 ============

@@ -14,6 +14,7 @@ Table of Contents
     * [get](#get)
     * [get_all](#get_all)
     * [set](#set)
+    * [add]
 * [Installation](#installation)
 * [Authors](#authors)
 * [Copyright and License](#copyright-and-license)
@@ -130,6 +131,14 @@ Set a cookie to client. This will add a new 'Set-Cookie' response header. `key` 
 If the same cookie (whole cookie string, e.g. "Name=Bob; Expires=Wed, 09 Jun 2021 10:18:14 GMT; Max-Age=50; Domain=example.com; Path=/; Secure; HttpOnly;") has already been setted, new cookie will be ignored.
 
 [Back to TOC](#table-of-contents)
+
+add
+---
+```lua
+syntax: ok, err = cookie_obj:add(cookie_key = "login", cookie_value="ok")
+```
+
+Add a cookie to server. This will add a new cookie to the request header.
 
 Installation
 ============

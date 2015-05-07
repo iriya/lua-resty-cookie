@@ -152,6 +152,23 @@ local function bake(cookie)
     return str
 end
 
+function _M.add(self, cookie_key, cookie_value)
+    local t = self.cookie_table
+    if not t then
+        ngx.req.set_header("Cookie", cookie_key .. "=" .. cookie_value)
+        return true
+    end
+
+    local cookie_str = ""
+    for k, v in pairs(self.cookie_table) do
+        cookie_str = cookie_str .. k .. "=" .. v .. "; "
+    end
+    cookie_str = cookie_str .. cookie_key .. "=" .. cookie_value
+
+    ngx.req.set_header("Cookie", cookie_str)
+    return true
+end
+
 function _M.set(self, cookie)
     local cookie_str, err = bake(cookie)
     if not cookie_str then
